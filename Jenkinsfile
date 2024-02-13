@@ -4,7 +4,7 @@ pipeline {
           APP_NAME = "youtube-clone-pipeline"
           GIT_USERNAME = "onyima101"
           GIT_EMAIL = "onyima_101@yahoo.com"
-          GIT_REPONAME = "a-youtube-clone-app"
+          GIT_REPONAME = "a-youtube-clone-gitops"
     }
     stages {
         stage("Cleanup Workspace") {
