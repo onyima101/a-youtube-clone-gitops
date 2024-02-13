@@ -20,7 +20,6 @@ pipeline {
         stage("Update the Deployment Tags") {
             steps {
                 sh """
-                    cd Kubernetes
                     cat deployment.yml
                     sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yml
                     cat deployment.yml
@@ -30,7 +29,6 @@ pipeline {
         stage("Push the changed deployment file to GitHub") {
             steps {
                 sh """
-                    cd Kubernetes
                     git config --global user.name "${GIT_USERNAME}"
                     git config --global user.email "${GIT_EMAIL}"
                     git add deployment.yml
